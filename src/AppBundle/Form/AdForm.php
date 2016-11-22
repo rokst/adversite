@@ -15,14 +15,14 @@ class AdForm extends AbstractType
     {
         $builder
             ->add('Title', TextType::class, array(
-                'label'  => false,
+                'label' => false,
                 'attr' => [
                     'placeholder' => 'Title',
                     'class' => 'form-control',
                 ],
             ))
             ->add('Description', TextareaType::class, array(
-                'label'  => false,
+                'label' => false,
                 'attr' => [
                     'placeholder' => 'Description',
                     'class' => 'form-control',
@@ -31,13 +31,13 @@ class AdForm extends AbstractType
             ->add('Category', EntityType::class, array(
                 'class' => 'AppBundle\Entity\Category',
                 'choice_label' => 'name',
-                'label'  => false,
+                'label' => false,
                 'attr' => [
                     'class' => 'form-control',
                 ]
-                ))
+            ))
             ->add('Price', NumberType::class, array(
-                'label'  => false,
+                'label' => false,
                 'attr' => [
                     'placeholder' => 'Price',
                     'class' => 'form-control',

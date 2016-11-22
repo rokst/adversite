@@ -12,6 +12,8 @@ class AdvertisementController extends Controller
 {
     /**
      * @Route("/add", name="add_ad")
+     * @param Request $request
+     * @return \Symfony\Component\HttpFoundation\RedirectResponse|\Symfony\Component\HttpFoundation\Response
      */
     public function addAdvertisementAction(Request $request)
     {
@@ -29,7 +31,6 @@ class AdvertisementController extends Controller
         if ($form->isSubmitted() && $form->isValid()) {
 
             $today = new \DateTime();
-            echo $today->format('F j, Y, g:i a');
             $ad->setDate($today);
             $ad->setUserId($user);
 
@@ -39,7 +40,7 @@ class AdvertisementController extends Controller
 
             $this->addFlash(
                 'notice',
-                'You just added a new Advertisement!'
+                'You just added a new advertisement!'
             );
 
             return $this->redirectToRoute('homepage');
