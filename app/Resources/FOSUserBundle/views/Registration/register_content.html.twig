@@ -1,0 +1,27 @@
+{% trans_default_domain 'FOSUserBundle' %}
+<div class="row">
+    <div class="col-md-offset-5 col-md-3">
+        <form action="{{ path('fos_user_registration_register') }}" method="POST">
+            <h4>Please Register</h4>
+            <div class="form-group" id="fos_user_registration_form">
+                {{ form_widget(form.email, { 'attr': {'class': 'form-control', 'placeholder': 'Your email' } }) }}
+                {{ form_errors(form.email) }}
+
+                {{ form_widget(form.username, { 'attr': {'class': 'form-control', 'placeholder': 'Your username' } }) }}
+                {{ form_errors(form.username) }}
+
+                {{ form_widget(form.plainPassword.first, { 'attr': {'class': 'form-control', 'placeholder': 'Your password' } }) }}
+                {{ form_errors(form.plainPassword.first) }}
+
+                {{ form_widget(form.plainPassword.second, { 'attr': {'class': 'form-control', 'placeholder': 'Please repeat password' } }) }}
+                {{ form_errors(form.plainPassword.second) }}
+
+                {{ form_rest(form) }}
+
+            </div>
+            <div>
+                <input class="btn btn-success" type="submit" value="Register">
+            </div>
+        </form>
+    </div>
+</div>

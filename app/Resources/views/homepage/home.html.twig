@@ -1,0 +1,27 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div class = "container">
+        <row>
+            <div class = "jumbotron">
+                <h2>Displaying all ads</h2>
+            </div>
+        </row>
+        {%  for ad in ads %}
+            <div class="col-lg-4">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">{{ ad.advert.Title }}</h3>
+                    </div>
+                    <div class="panel-body">
+                        <h5>Category: {{ ad.name }}</h5><br>
+                        Description:
+                        <p>{{ ad.advert.Description }}</p>
+                        <h5>Price: {{ ad.advert.Price }} €</h5><br>
+                        Posted by {{ ad.username }} on {{ ad.advert.date|date('Y-m-d') }}
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}
